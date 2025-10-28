@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Renarx — Predict. Prevent. Profit.</title>
+  <meta name="description" content="Renarx uses AI to predict and prevent costly SaaS renewals and hidden price hikes." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Renarx logo" class="logo">
+        <span class="brand-name">Renarx</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="#how">How it works</a>
+        <a class="nav-link" href="#join">Join Waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="title">Predict. Prevent. Profit.</h1>
+          <p class="tagline">AI that predicts and prevents costly SaaS renewals, hidden price hikes, and missed contract deadlines — saving companies money before they lose it.</p>
+          <div class="cta-row">
+            <button class="btn-primary" id="notifyBtn">Join Waitlist</button>
+            <a class="btn-ghost" href="mailto:wasim@renarx.com?subject=Renarx%20Waitlist">Contact</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="card">
+            <div class="chart-arc"></div>
+            <div class="card-copy">
+              <h4>Renewal Risk</h4>
+              <p class="muted">Action recommended — likely price increase next term</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="container">
+        <h2 class="section-title">How Renarx works</h2>
+        <div class="cards">
+          <article class="feature">
+            <h3>Predict</h3>
+            <p>Automatically detect upcoming renewals and anomalies across your SaaS contracts.</p>
+          </article>
+          <article class="feature">
+            <h3>Prevent</h3>
+            <p>Get timely alerts and negotiation playbooks to stop unnecessary price hikes.</p>
+          </article>
+          <article class="feature">
+            <h3>Profit</h3>
+            <p>Capture savings and improve vendor ROI — keep what you earned.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <div class="container join-inner">
+        <div class="join-copy">
+          <h3>Ready for predictable savings?</h3>
+          <p>Join early access and be the first to try Renarx with exclusive pilot benefits.</p>
+        </div>
+        <form id="waitlistForm" class="waitlist-form" onsubmit="return submitForm(event)">
+          <input id="email" name="email" type="email" placeholder="Your work email" required>
+          <input id="company" name="company" type="text" placeholder="Company (optional)">
+          <button class="btn-primary" type="submit">Notify Me</button>
+        </form>
+        <p class="privacy">We won't share your email. You can unsubscribe anytime.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 Renarx</div>
+      <div class="footer-right">wasim@renarx.com</div>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">×</button>
+      <h4>Thanks — you're on the list</h4>
+      <p>We'll reach out when Renarx is ready. Meanwhile, you can contact us at <a href="mailto:wasim@renarx.com">wasim@renarx.com</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simple waitlist behavior: submits via mailto (fallback) and stores to localStorage as a placeholder
+    function submitForm(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const company = document.getElementById('company').value.trim();
+      if (!email) return false;
+      // Save locally (placeholder). Replace with real backend later.
+      const list = JSON.parse(localStorage.getItem('renarx_waitlist') || "[]");
+      list.push({email: email, company: company, date: new Date().toISOString()});
+      localStorage.setItem('renarx_waitlist', JSON.stringify(list));
+      // Open mail client as simple submission fallback
+      const subject = encodeURIComponent('Renarx Waitlist');
+      const body = encodeURIComponent('Please add me to the Renarx waitlist.\nEmail: ' + email + '\nCompany: ' + company);
+      window.location.href = `mailto:wasim@renarx.com?subject=${subject}&body=${body}`;
+      showModal();
+      return false;
+    }
+    function showModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden','false');
+    }
+    document.getElementById('modalClose').addEventListener('click', function(){ 
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+    });
+    document.getElementById('notifyBtn').addEventListener('click', function(){ 
+      document.getElementById('email').focus();
+      window.scrollTo({top: document.getElementById('join').offsetTop - 20, behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
