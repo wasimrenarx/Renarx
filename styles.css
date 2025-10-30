@@ -320,14 +320,14 @@ body {
 /* Hero parallax background */
 .hero {
   position: relative;
-  height: 100vh;
+  height: min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
 .hero::before {
   content: "";
   position: absolute; inset: 0;
-  background: url('assets/hero-bg.jpg') center/cover no-repeat fixed;
+  background: url('hero-bg-platinum2.png') center/cover no-repeat fixed;
   transform: scale(1.1);
   z-index: -1;
 }
