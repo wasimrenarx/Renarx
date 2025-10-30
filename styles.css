@@ -365,6 +365,15 @@ background: url('assets/hero-bg-platinum2.png') center/cover no-repeat fixed;
   box-shadow: 0 0 20px rgba(201,163,94,0.4);
   transform: translateY(-8px) scale(1.02);
 }
+/* Center single tool-box in Toolkit section */
+#toolkit .tool-box-grid {
+  display: flex;
+  justify-content: center;
+}
+#toolkit .tool-box {
+  max-width: 600px; /* keeps it from stretching too wide */
+  margin: 0 auto;
+}
 
 
 }
