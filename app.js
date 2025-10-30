@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
   animateDonut(22);
   window.updateRenewalRisk = (percent) => animateDonut(percent);
 });
+setInterval(() => animateDonut(22), 5000);
+
 // Initialize AOS
 AOS.init({ duration: 1000, once: true });
 
