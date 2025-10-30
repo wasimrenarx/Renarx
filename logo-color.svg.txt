@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Renarx logo">
+  <!-- Left facet -->
+  <polygon points="12,2 2,12 12,22" fill="#E8EBEF"/>
+  <!-- Right facet -->
+  <polygon points="12,2 22,12 12,22" fill="#C9A35E"/>
+  <!-- Outline -->
+  <path d="M12 2L2 12L12 22L22 12Z" stroke="#BFC2C7" stroke-width="1.5" fill="none"/>
+</svg>
