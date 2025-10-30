@@ -349,6 +349,17 @@ background: url('assets/hero-bg-platinum2.png') center/cover no-repeat fixed;
   z-index: 1;
   text-align: center;
 }
+/* Dashboard boxes */
+#dashboard .tool-box {
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, rgba(201,163,94,0.08), var(--card-bg));
+}
+
+/* Trajectory boxes */
+#trajectory .tool-box {
+  border: 1px solid var(--gold);
+  background: linear-gradient(180deg, rgba(201,163,94,0.12), var(--card-bg));
+}
 
 
 }
