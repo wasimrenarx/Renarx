@@ -1,135 +1,241 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Renarx — Predict. Prevent. Profit.</title>
-  <meta name="description" content="Renarx uses AI to predict and prevent costly SaaS renewals and hidden price hikes." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <img src="assets/logo.svg" alt="Renarx logo" class="logo">
+        <svg class="logo" viewBox="0 0 24 24" aria-label="Renarx logo" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="12,2 2,12 12,22" class="logo-facet-left"></polygon>
+          <polygon points="12,2 22,12 12,22" class="logo-facet-right"></polygon>
+          <path d="M12 2L2 12L12 22L22 12Z" class="logo-outline"></path>
+        </svg>
         <span class="brand-name">Renarx</span>
       </div>
       <nav class="nav">
-        <a class="nav-link" href="#how">How it works</a>
-        <a class="nav-link" href="#join">Join Waitlist</a>
-      </nav>
+        <a class="nav-link" href="#assistant">AI Assistant</a>
+        <a class="nav-link" href="#features">Strategy</a>
+        <a class="nav-link" href="#dashboard">Dashboard</a>
+        <a class="nav-link" href="#toolkit">Toolkit</a>
+        <a class="nav-link" href="#roi">ROI</a>
+<a class="nav-link" href="#trajectory">Trajectory</a>
+ <a class="nav-link" href="#join">Contact</a>
+
     </div>
   </header>
+  <!-- Light mode favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
+
+<!-- Dark mode favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" sizes="512x512" href="assets/logo-color-512.png" />
 
   <main>
-    <section class="hero">
+    <!-- Hero -->
+    <section class="hero" id="hero">
       <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1 class="title">Predict. Prevent. Profit.</h1>
-          <p class="tagline">AI that predicts and prevents costly SaaS renewals, hidden price hikes, and missed contract deadlines — saving companies money before they lose it.</p>
-          <div class="cta-row">
-            <button class="btn-primary" id="notifyBtn">Join Waitlist</button>
-            <a class="btn-ghost" href="mailto:wasim@renarx.com?subject=Renarx%20Waitlist">Contact</a>
+        <h1 class="title">Predict. Prevent. Profit.</h1>
+        <p class="tagline">The AI platform that transforms your SaaS contracts from liabilities into quantifiable budget leverage.</p>
+        <div class="cta-group">
+          <a class="btn btn-primary btn-tool" href="#join">Request a demo</a>
+          <a class="btn btn-secondary btn-tool" href="#toolkit">Explore toolkit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Assistant (top) -->
+    <section class="assistant-section" id="assistant">
+      <div class="container">
+        <h2 class="section-heading">AI Assistant</h2>
+        <p class="section-subheading">Ask procurement questions, summarize contracts, and generate negotiation playbooks instantly.</p>
+
+        <div class="assistant-grid">
+          <!-- Donut chart -->
+          <div class="risk-card">
+            <div class="risk-header">
+              <span class="risk-title">Renewal risk</span>
+              <span class="risk-tag">Action recommended</span>
+            </div>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 120 120">
+                <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="donut-arc" cx="60" cy="60" r="50"></circle>
+                <text class="donut-text" x="60" y="65">22%</text>
+              </svg>
+            </div>
+            <p class="risk-caption">Likely price increase next term.</p>
+          </div>
+
+          <!-- Assistant prompt -->
+          <div class="assistant-card">
+            <label class="input-label" for="assistantPrompt">Ask Renarx Assistant</label>
+            <textarea id="assistantPrompt" class="input-textarea" placeholder="e.g., Draft a counter to a 12% renewal uplift for Salesforce."></textarea>
+            <div class="tool-actions">
+              <button id="assistantGenerateBtn" class="btn btn-primary btn-tool">Generate response</button>
+            </div>
+            <div id="assistantOutput" class="tool-output">Your assistant response will appear here.</div>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="card">
-            <div class="chart-arc"></div>
-            <div class="card-copy">
-              <h4>Renewal Risk</h4>
-              <p class="muted">Action recommended — likely price increase next term</p>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-heading">Strategic advantage</h2>
+        <p class="section-subheading">Renarx delivers quantifiable financial control across three pillars of contract optimization.</p>
+        <div class="features-grid">
+          <article class="feature-card"><h3>Predictive pricing governance</h3><p>Anticipate vendor price hikes 6–12 months out.</p></article>
+          <article class="feature-card"><h3>License utilization audits</h3><p>Automate discovery of dormant licenses.</p></article>
+          <article class="feature-card"><h3>Contract value extraction</h3><p>Unify fragmented contracts to consolidate buying power.</p></article>
+        </div>
+      </div>
+    <section class="ai-tool" id="dashboard">
+  <div class="container">
+    <h2 class="section-heading">Dashboard Preview</h2>
+    <p class="section-subheading">A unified view of your SaaS contracts, renewals, and risks.</p>
+    <div class="tool-box-grid">
+      <div class="tool-box">
+        <h3>Renewal Calendar</h3>
+        <p>       Upcoming contract renewals with 6–12 month look‑ahead.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Vendor Risk Cards</h3>
+        <p>Risk scores and uplift predictions for each vendor.</p>
+      </div>
+      <div class="tool-box">
+        <h3>License Utilization</h3>
+        <p>Active vs dormant seats, rightsizing opportunities.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Alerts Panel</h3>
+        <p>Notifications for renewals, price hikes, and under‑use.</p>
+      </div>
+    </div>
+
+</section>
+
+    <!-- Toolkit (Negotiation insight mid-page) -->
+    <section class="ai-tool" id="toolkit">
+      <div class="container">
+        <h2 class="section-heading">Executive AI toolkit</h2>
+        <p class="section-subheading">Generate negotiation insights with concise, board‑ready outputs.</p>
+
+        <div class="tool-box-grid">
+          <div class="tool-box">
+            <h3>Negotiation Insight Generator</h3>
+            <div class="input-group">
+              <label class="input-label" for="vendorInput">Vendor / Contract Details</label>
+              <textarea id="vendorInput" class="input-textarea" placeholder="Vendor, contract value, renewal date, unused licenses, key risks…" required></textarea>
+            </div>
+            <div class="tool-actions">
+              <button id="generateInsightBtn" class="btn btn-primary btn-tool">Generate strategic insight</button>
+            </div>
+            <div id="insightOutput" class="tool-output">Provide details to receive a concise negotiation strategy.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI (bottom) -->
+    <section class="ai-tool" id="roi">
+      <div class="container">
+        <h2 class="section-heading">ROI Statement Generator</h2>
+        <p class="section-subheading">Confirm projected savings and produce an executive‑ready statement for leadership.</p>
+
+        <div class="tool-box">
+          <div class="input-group">
+            <div class="input-field">
+              <label class="input-label" for="annualSpend">Annual SaaS spend ($)</label>
+              <input type="number" id="annualSpend" class="input-field-control" value="500000" min="100000" required />
+            </div>
+            <div class="input-field">
+              <label class="input-label" for="savingsPercent">Estimated annual savings (%)</label>
+              <input type="number" id="savingsPercent" class="input-field-control" value="15" min="1" max="100" required />
             </div>
           </div>
+          <div class="tool-actions">
+            <button id="generateRoiBtn" class="btn btn-primary btn-tool">Generate ROI statement</button>
+          </div>
+          <div id="roiOutput" class="tool-output">Enter figures and generate your board‑ready statement.</div>
         </div>
       </div>
     </section>
 
-    <section id="how" class="how">
+<section class="ai-tool" id="trajectory">
+  <div class="container">
+    <h2 class="section-heading">The Renarx Trajectory</h2>
+    <p class="section-subheading">Future capabilities on our roadmap for continuous innovation.</p>
+    <div class="tool-box-grid">
+      <div class="tool-box">
+        <h3>Q2 2026</h3>
+        <p><strong>Automated Clause Comparison</strong><br>
+        AI-driven comparison of contract clauses against industry benchmarks to flag predatory terms and standardize legal risk.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Q3 2026</h3>
+        <p><strong>Cross-Functional Collaboration Portal</strong><br>
+        A dedicated workspace for Finance, Legal, and IT teams to jointly review data and approve strategic contract actions.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Q4 2026</h3>
+        <p><strong>Benchmarking Ecosystem Integration</strong><br>
+        Live integration with anonymized peer data to benchmark your pricing against similar enterprise transactions.</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Join -->
+    <section class="join" id="join">
       <div class="container">
-        <h2 class="section-title">How Renarx works</h2>
-        <div class="cards">
-          <article class="feature">
-            <h3>Predict</h3>
-            <p>Automatically detect upcoming renewals and anomalies across your SaaS contracts.</p>
-          </article>
-          <article class="feature">
-            <h3>Prevent</h3>
-            <p>Get timely alerts and negotiation playbooks to stop unnecessary price hikes.</p>
-          </article>
-          <article class="feature">
-            <h3>Profit</h3>
-            <p>Capture savings and improve vendor ROI — keep what you earned.</p>
-          </article>
+        <div class="join-inner">
+          <div class="join-copy">
+            <h3>Ready for quantifiable control?</h3>
+            <p>Schedule a 15‑minute consultation to see how Renarx can secure 8–15% of your annual SaaS spend.</p>
+          </div>
+          <form class="waitlist-form" id="waitlistForm">
+            <input type="email" id="email" placeholder="Work email" required />
+            <input type="text" id="company" placeholder="Company name" required />
+            <button type="submit" class="btn btn-primary btn-tool">Request demo</button>
+          </form>
         </div>
+        <p class="privacy">You will be contacted by a Renarx sales representative. Your data is secure.</p>
       </div>
     </section>
-
-    <section id="join" class="join">
-      <div class="container join-inner">
-        <div class="join-copy">
-          <h3>Ready for predictable savings?</h3>
-          <p>Join early access and be the first to try Renarx with exclusive pilot benefits.</p>
-        </div>
-        <form id="waitlistForm" class="waitlist-form" onsubmit="return submitForm(event)">
-          <input id="email" name="email" type="email" placeholder="Your work email" required>
-          <input id="company" name="company" type="text" placeholder="Company (optional)">
-          <button class="btn-primary" type="submit">Notify Me</button>
-        </form>
-        <p class="privacy">We won't share your email. You can unsubscribe anytime.</p>
-      </div>
-    </section>
-
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© 2025 Renarx</div>
-      <div class="footer-right">wasim@renarx.com</div>
+      <p>&copy; 2025 Renarx. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="mailto:support@renarx.com">Support</a>
+        <a href="#">Security statement</a>
+      </div>
     </div>
   </footer>
 
-  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose">×</button>
-      <h4>Thanks — you're on the list</h4>
-      <p>We'll reach out when Renarx is ready. Meanwhile, you can contact us at <a href="mailto:wasim@renarx.com">wasim@renarx.com</a>.</p>
+      <button class="close-btn" id="modalClose" aria-label="Close modal">×</button>
+      <h4>Consultation requested</h4>
+      <p>Thank you. A Renarx representative will reach out within one business day.</p>
     </div>
   </div>
 
-  <script>
-    // Simple waitlist behavior: submits via mailto (fallback) and stores to localStorage as a placeholder
-    function submitForm(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const company = document.getElementById('company').value.trim();
-      if (!email) return false;
-      // Save locally (placeholder). Replace with real backend later.
-      const list = JSON.parse(localStorage.getItem('renarx_waitlist') || "[]");
-      list.push({email: email, company: company, date: new Date().toISOString()});
-      localStorage.setItem('renarx_waitlist', JSON.stringify(list));
-      // Open mail client as simple submission fallback
-      const subject = encodeURIComponent('Renarx Waitlist');
-      const body = encodeURIComponent('Please add me to the Renarx waitlist.\nEmail: ' + email + '\nCompany: ' + company);
-      window.location.href = `mailto:wasim@renarx.com?subject=${subject}&body=${body}`;
-      showModal();
-      return false;
-    }
-    function showModal() {
-      const modal = document.getElementById('modal');
-      modal.style.display = 'block';
-      modal.setAttribute('aria-hidden','false');
-    }
-    document.getElementById('modalClose').addEventListener('click', function(){ 
-      const modal = document.getElementById('modal');
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden','true');
-    });
-    document.getElementById('notifyBtn').addEventListener('click', function(){ 
-      document.getElementById('email').focus();
-      window.scrollTo({top: document.getElementById('join').offsetTop - 20, behavior: 'smooth'});
-    });
-  </script>
-</body>
-</html>
+  <!-- Script at end of body -->
+  <script src="app.js"></script>
+
+  <!-- Animation libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Your app logic -->
+  <script src="app.js"></script>
