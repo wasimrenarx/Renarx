@@ -220,13 +220,13 @@ body {
 .ai-tool { padding: 50px 0; border-top: 1px solid var(--border); }
 .tool-box-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 18px; }
 .tool-box { background: var(--card-bg); padding: 18px; border-radius: 12px; border: 1px solid var(--border); }
-.tool-box h3 {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  color: var(--gold);
-  margin: 0 0 12px;
-  text-align: center;
+.tool-box {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .input-group { display: flex; flex-direction: column; gap: 12px; }
 .input-field { display: grid; gap: 6px; }
 .input-field-control {
@@ -320,14 +320,14 @@ body {
 /* Hero parallax background */
 .hero {
   position: relative;
- min-height: 100vh;
+  height: min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
 }
 .hero::before {
   content: "";
   position: absolute; inset: 0;
-background: url('hero-bg-platinum2.png') center/cover no-repeat fixed;
+background: url('assets/hero-bg-platinum2.png') center/cover no-repeat fixed;
   transform: scale(1.1);
   z-index: -1;
 }
