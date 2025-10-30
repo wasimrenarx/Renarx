@@ -350,13 +350,14 @@ body {
   text-align: center;
 }
 
-@media(max-width:1024px)
-
-.hero::before {
-  content: "";
-  position:absolute;
-  inset: 0;
-  background: url('assetshero-bg-platinum2.png') center/cover no-repeat fixed;
-  z-index: -1;
-  transform: scale(1.1);
+@media (max-width:1024px) {
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('assets/hero-bg.jpg') center/cover no-repeat fixed;
+    z-index: -1;
+    transform: scale(1.1);
+  }
 }
+
