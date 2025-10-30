@@ -1,70 +1,249 @@
-/* Renarx - Minimal Tech theme */
-:root{
-  --bg: #ffffff;
-  --primary: #1E40AF;
-  --accent: #2563EB;
-  --muted: #6B7280;
-  --card: #F8FAFC;
-  --text: #0F172A;
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 24 24" aria-label="Renarx logo" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="12,2 2,12 12,22" class="logo-facet-left"></polygon>
+          <polygon points="12,2 22,12 12,22" class="logo-facet-right"></polygon>
+          <path d="M12 2L2 12L12 22L22 12Z" class="logo-outline"></path>
+        </svg>
+        <span class="brand-name">Renarx</span>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="#assistant">AI Assistant</a>
+        <a class="nav-link" href="#features">Strategy</a>
+        <a class="nav-link" href="#dashboard">Dashboard</a>
+        <a class="nav-link" href="#toolkit">Toolkit</a>
+        <a class="nav-link" href="#roi">ROI</a>
+<a class="nav-link" href="#trajectory">Trajectory</a>
+ <a class="nav-link" href="#join">Contact</a>
+
+    </div>
+  </header>
+  <!-- Light mode favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
+
+<!-- Dark mode favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+
+<!-- PNG fallback -->
+<link rel="icon" type="image/png" sizes="512x512" href="assets/logo-color-512.png" />
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <h1 class="title">Predict. Prevent. Profit.</h1>
+        <p class="tagline">The AI platform that transforms your SaaS contracts from liabilities into quantifiable budget leverage.</p>
+        <div class="cta-group">
+          <a class="btn btn-primary btn-tool" href="#join">Request a demo</a>
+          <a class="btn btn-secondary btn-tool" href="#toolkit">Explore toolkit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Assistant (top) -->
+    <section class="assistant-section" id="assistant">
+      <div class="container">
+        <h2 class="section-heading">AI Assistant</h2>
+        <p class="section-subheading">Ask procurement questions, summarize contracts, and generate negotiation playbooks instantly.</p>
+
+        <div class="assistant-grid">
+          <!-- Donut chart -->
+          <div class="risk-card">
+            <div class="risk-header">
+              <span class="risk-title">Renewal risk</span>
+              <span class="risk-tag">Action recommended</span>
+            </div>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 120 120">
+                <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="donut-arc" cx="60" cy="60" r="50"></circle>
+                <text class="donut-text" x="60" y="65">22%</text>
+              </svg>
+            </div>
+            <p class="risk-caption">Likely price increase next term.</p>
+          </div>
+
+          <!-- Assistant prompt -->
+          <div class="assistant-card">
+            <label class="input-label" for="assistantPrompt">Ask Renarx Assistant</label>
+            <textarea id="assistantPrompt" class="input-textarea" placeholder="e.g., Draft a counter to a 12% renewal uplift for Salesforce."></textarea>
+            <div class="tool-actions">
+              <button id="assistantGenerateBtn" class="btn btn-primary btn-tool">Generate response</button>
+            </div>
+            <div id="assistantOutput" class="tool-output">Your assistant response will appear here.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="section-heading">Strategic advantage</h2>
+        <p class="section-subheading">Renarx delivers quantifiable financial control across three pillars of contract optimization.</p>
+        <div class="features-grid">
+          <article class="feature-card"><h3>Predictive pricing governance</h3><p>Anticipate vendor price hikes 6–12 months out.</p></article>
+          <article class="feature-card"><h3>License utilization audits</h3><p>Automate discovery of dormant licenses.</p></article>
+          <article class="feature-card"><h3>Contract value extraction</h3><p>Unify fragmented contracts to consolidate buying power.</p></article>
+        </div>
+      </div>
+    <section class="ai-tool" id="dashboard">
+  <div class="container">
+    <h2 class="section-heading">Dashboard Preview</h2>
+    <p class="section-subheading">A unified view of your SaaS contracts, renewals, and risks.</p>
+    <div class="tool-box-grid">
+      <div class="tool-box">
+        <h3>Renewal Calendar</h3>
+        <p>       Upcoming contract renewals with 6–12 month look‑ahead.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Vendor Risk Cards</h3>
+        <p>Risk scores and uplift predictions for each vendor.</p>
+      </div>
+      <div class="tool-box">
+        <h3>License Utilization</h3>
+        <p>Active vs dormant seats, rightsizing opportunities.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Alerts Panel</h3>
+        <p>Notifications for renewals, price hikes, and under‑use.</p>
+      </div>
+    </div>
+
+</section>
+
+    <!-- Toolkit (Negotiation insight mid-page) -->
+    <section class="ai-tool" id="toolkit">
+      <div class="container">
+        <h2 class="section-heading">Executive AI toolkit</h2>
+        <p class="section-subheading">Generate negotiation insights with concise, board‑ready outputs.</p>
+
+        <div class="tool-box-grid">
+          <div class="tool-box">
+            <h3>Negotiation Insight Generator</h3>
+            <div class="input-group">
+              <label class="input-label" for="vendorInput">Vendor / Contract Details</label>
+              <textarea id="vendorInput" class="input-textarea" placeholder="Vendor, contract value, renewal date, unused licenses, key risks…" required></textarea>
+            </div>
+            <div class="tool-actions">
+              <button id="generateInsightBtn" class="btn btn-primary btn-tool">Generate strategic insight</button>
+            </div>
+            <div id="insightOutput" class="tool-output">Provide details to receive a concise negotiation strategy.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI (bottom) -->
+    <section class="ai-tool" id="roi">
+      <div class="container">
+        <h2 class="section-heading">ROI Statement Generator</h2>
+        <p class="section-subheading">Confirm projected savings and produce an executive‑ready statement for leadership.</p>
+
+        <div class="tool-box">
+          <div class="input-group">
+            <div class="input-field">
+              <label class="input-label" for="annualSpend">Annual SaaS spend ($)</label>
+              <input type="number" id="annualSpend" class="input-field-control" value="500000" min="100000" required />
+            </div>
+            <div class="input-field">
+              <label class="input-label" for="savingsPercent">Estimated annual savings (%)</label>
+              <input type="number" id="savingsPercent" class="input-field-control" value="15" min="1" max="100" required />
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button id="generateRoiBtn" class="btn btn-primary btn-tool">Generate ROI statement</button>
+          </div>
+          <div id="roiOutput" class="tool-output">Enter figures and generate your board‑ready statement.</div>
+        </div>
+      </div>
+    </section>
+
+<section class="ai-tool" id="trajectory">
+  <div class="container">
+    <h2 class="section-heading">The Renarx Trajectory</h2>
+    <p class="section-subheading">Future capabilities on our roadmap for continuous innovation.</p>
+    <div class="tool-box-grid">
+      <div class="tool-box">
+        <h3>Q2 2026</h3>
+        <p><strong>Automated Clause Comparison</strong><br>
+        AI-driven comparison of contract clauses against industry benchmarks to flag predatory terms and standardize legal risk.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Q3 2026</h3>
+        <p><strong>Cross-Functional Collaboration Portal</strong><br>
+        A dedicated workspace for Finance, Legal, and IT teams to jointly review data and approve strategic contract actions.</p>
+      </div>
+      <div class="tool-box">
+        <h3>Q4 2026</h3>
+        <p><strong>Benchmarking Ecosystem Integration</strong><br>
+        Live integration with anonymized peer data to benchmark your pricing against similar enterprise transactions.</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Join -->
+    <section class="join" id="join">
+      <div class="container">
+        <div class="join-inner">
+          <div class="join-copy">
+            <h3>Ready for quantifiable control?</h3>
+            <p>Schedule a 15‑minute consultation to see how Renarx can secure 8–15% of your annual SaaS spend.</p>
+          </div>
+          <form class="waitlist-form" id="waitlistForm">
+            <input type="email" id="email" placeholder="Work email" required />
+            <input type="text" id="company" placeholder="Company name" required />
+            <button type="submit" class="btn btn-primary btn-tool">Request demo</button>
+          </form>
+        </div>
+        <p class="privacy">You will be contacted by a Renarx sales representative. Your data is secure.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Renarx. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="mailto:support@renarx.com">Support</a>
+        <a href="#">Security statement</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn" id="modalClose" aria-label="Close modal">×</button>
+      <h4>Consultation requested</h4>
+      <p>Thank you. A Renarx representative will reach out within one business day.</p>
+    </div>
+  </div>
+
+  <!-- Script at end of body -->
+  <script src="app.js"></script>
+
+  <!-- Animation libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Your app logic -->
+  <script src="app.js"></script>
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('assetshero-bg-platinum2.png') center/cover no-repeat fixed;
+  z-index: -1;
+  transform: scale(1.1);
 }
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  margin:0; color:var(--text); background:linear-gradient(180deg, #ffffff 0%, #FBFDFF 100%);
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.site-header{position:fixed;left:0;right:0;top:0;background:transparent;padding:18px 0;z-index:40}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:44px;height:44px}
-.brand-name{font-weight:700;font-size:1.1rem;color:var(--primary)}
-.nav{display:flex;gap:18px;align-items:center}
-.nav-link{color:var(--muted);text-decoration:none;font-weight:600}
-.hero{display:flex;align-items:center;min-height:78vh;padding-top:72px}
-.hero-inner{display:flex;gap:48px;align-items:center;justify-content:space-between}
-.hero-copy{max-width:650px}
-.title{font-size:2.6rem;margin:0;color:var(--text);line-height:1.02}
-.tagline{color:var(--muted);margin-top:14px;font-size:1.05rem;line-height:1.6}
-.cta-row{margin-top:22px;display:flex;gap:12px;align-items:center}
-.btn-primary{background:linear-gradient(90deg,var(--primary),var(--accent));color:white;border:none;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(30,64,175,0.12);transition:transform .18s ease}
-.btn-primary:hover{transform:translateY(-4px)}
-.btn-ghost{background:transparent;border:2px solid #E6EEF9;padding:10px 18px;border-radius:10px;color:var(--primary);text-decoration:none;font-weight:600}
 
-.hero-visual{flex:1;display:flex;justify-content:center}
-.card{width:320px;background:linear-gradient(180deg,#FFFFFF,#FBFDFF);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(16,24,40,0.06);border:1px solid rgba(13,38,70,0.04)}
-.chart-arc{width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--accent), #A5B4FC, #E0E7FF);margin-bottom:12px}
-.card-copy h4{margin:0;color:var(--primary)}
-.card-copy .muted{color:var(--muted);font-size:0.9rem}
-
-.how{padding:48px 0}
-.section-title{text-align:center;font-size:1.6rem;color:var(--text);margin-bottom:18px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-.feature{background:linear-gradient(180deg,#fff,#FCFDFF);border-radius:12px;padding:18px;box-shadow:0 8px 28px rgba(14,20,30,0.04);border:1px solid rgba(13,38,70,0.04)}
-.feature h3{margin:0;color:var(--primary)}
-.feature p{color:var(--muted);margin-top:8px}
-
-.join{background:linear-gradient(180deg,#FBFDFF,#F7FBFF);padding:36px 0}
-.join-inner{display:flex;align-items:center;gap:24px;justify-content:space-between}
-.join-copy h3{margin:0;color:var(--text)}
-.waitlist-form{display:flex;gap:12px;align-items:center}
-.waitlist-form input[type="email"], .waitlist-form input[type="text"]{padding:12px 14px;border-radius:10px;border:1px solid #EFF6FF;background:white;min-width:220px}
-.privacy{color:var(--muted);font-size:0.9rem;margin-top:10px}
-
-.site-footer{padding:18px 0;border-top:1px solid #EEF2FF;margin-top:36px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
-
-/* modal */
-.modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.55);align-items:center;justify-content:center;z-index:60}
-.modal-content{background:white;padding:28px;border-radius:12px;max-width:520px;color:var(--text)}
-
-@media (max-width:900px){
-  .hero-inner{flex-direction:column-reverse;text-align:center;padding:40px 0}
-  .cards{grid-template-columns:1fr; margin-top:8px}
-  .join-inner{flex-direction:column;gap:12px;text-align:center}
-  .nav{display:none}
-  .brand-name{display:none}
-  .hero{min-height:72vh;padding-top:70px}
-  .title{font-size:2rem}
-}
