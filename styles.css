@@ -375,6 +375,25 @@ background: url('assets/hero-bg-platinum2.png') center/cover no-repeat fixed;
   margin: 0 auto;
 }
 
+/* Make all tool-box headings golden */
+.tool-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold); /* ✅ golden text */
+  margin: 0 0 12px;
+  text-align: center;
+}
+#trajectory .tool-box h3 {
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+/* Logo polish */
+.logo-facet-left { fill: var(--platinum); filter: drop-shadow(0 0 4px rgba(232,235,239,0.6)); }
+.logo-facet-right { fill: var(--gold); filter: drop-shadow(0 0 6px rgba(201,163,94,0.7)); }
+.logo-outline { stroke: var(--gold); stroke-width: 1.5; }
 
 }
+.logo:hover { transform: scale(1.1) rotate(3deg); transition: all 0.3s ease; }
 
+}
