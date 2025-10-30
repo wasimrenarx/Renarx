@@ -1,249 +1,362 @@
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=Playfair+Display:wght@600;700&display=swap"<link rel="stylesheet" href="style.css">
-<script src="app.js"></script>
+:root {
+  --bg-main: #0C0C0D;
+  --bg-gradient: linear-gradient(180deg, #18181A, #0C0C0D);
+  --platinum: #E8EBEF;
+  --silver: #BFC2C7;
+  --gold: #C9A35E;
+  --muted: #7E8A94;
+  --border: #2F2F32;
+  --card-bg: #1A1A1C;
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <svg class="logo" viewBox="0 0 24 24" aria-label="Renarx logo" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="12,2 2,12 12,22" class="logo-facet-left"></polygon>
-          <polygon points="12,2 22,12 12,22" class="logo-facet-right"></polygon>
-          <path d="M12 2L2 12L12 22L22 12Z" class="logo-outline"></path>
-        </svg>
-        <span class="brand-name">Renarx</span>
-      </div>
-      <nav class="nav">
-        <a class="nav-link" href="#assistant">AI Assistant</a>
-        <a class="nav-link" href="#features">Strategy</a>
-        <a class="nav-link" href="#dashboard">Dashboard</a>
-        <a class="nav-link" href="#toolkit">Toolkit</a>
-        <a class="nav-link" href="#roi">ROI</a>
-<a class="nav-link" href="#trajectory">Trajectory</a>
- <a class="nav-link" href="#join">Contact</a>
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-wordmark: 'Playfair Display', serif;
+}
 
-    </div>
-  </header>
-  <!-- Light mode favicon -->
-<link rel="icon" type="image/svg+xml" href="assets/favicon-light.svg" media="(prefers-color-scheme: light)" />
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  color: var(--silver);
+  background: var(--bg-gradient);
+  line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-<!-- Dark mode favicon -->
-<link rel="icon" type="image/svg+xml" href="assets/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
+/* Header */
+.site-header {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  background-color: rgba(12, 12, 13, 0.95);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 6px; }
 
-<!-- PNG fallback -->
-<link rel="icon" type="image/png" sizes="512x512" href="assets/logo-color-512.png" />
+/* Logo (two-tone plumbob) */
+.logo { width: 25px; height: 25px; display: block; }
+.logo-facet-left { fill: var(--platinum); }
+.logo-facet-right { fill: var(--gold); }
+.logo-outline { stroke: var(--silver); stroke-width: 1.5; fill: none; }
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="container hero-inner">
-        <h1 class="title">Predict. Prevent. Profit.</h1>
-        <p class="tagline">The AI platform that transforms your SaaS contracts from liabilities into quantifiable budget leverage.</p>
-        <div class="cta-group">
-          <a class="btn btn-primary btn-tool" href="#join">Request a demo</a>
-          <a class="btn btn-secondary btn-tool" href="#toolkit">Explore toolkit</a>
-        </div>
-      </div>
-    </section>
+.brand-name {
+  font-family: var(--font-wordmark);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--platinum);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
 
-    <!-- AI Assistant (top) -->
-    <section class="assistant-section" id="assistant">
-      <div class="container">
-        <h2 class="section-heading">AI Assistant</h2>
-        <p class="section-subheading">Ask procurement questions, summarize contracts, and generate negotiation playbooks instantly.</p>
+.nav { display: flex; gap: 24px; align-items: center; }
+.nav-link {
+  color: var(--silver);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--platinum); }
 
-        <div class="assistant-grid">
-          <!-- Donut chart -->
-          <div class="risk-card">
-            <div class="risk-header">
-              <span class="risk-title">Renewal risk</span>
-              <span class="risk-tag">Action recommended</span>
-            </div>
-            <div class="donut-wrap">
-              <svg class="donut" viewBox="0 0 120 120">
-                <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
-                <circle class="donut-arc" cx="60" cy="60" r="50"></circle>
-                <text class="donut-text" x="60" y="65">22%</text>
-              </svg>
-            </div>
-            <p class="risk-caption">Likely price increase next term.</p>
-          </div>
+/* Hero */
+.hero { padding: 90px 0 60px; text-align: center; }
+.hero-inner { max-width: 900px; margin: 0 auto; }
+.title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 16px;
+  background: linear-gradient(90deg, var(--silver), var(--platinum));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.tagline {
+  font-size: 1.3rem;
+  color: var(--silver);
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+.cta-group { display: flex; justify-content: center; gap: 24px; }
 
-          <!-- Assistant prompt -->
-          <div class="assistant-card">
-            <label class="input-label" for="assistantPrompt">Ask Renarx Assistant</label>
-            <textarea id="assistantPrompt" class="input-textarea" placeholder="e.g., Draft a counter to a 12% renewal uplift for Salesforce."></textarea>
-            <div class="tool-actions">
-              <button id="assistantGenerateBtn" class="btn btn-primary btn-tool">Generate response</button>
-            </div>
-            <div id="assistantOutput" class="tool-output">Your assistant response will appear here.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border-radius: 7px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-primary {
+  background-color: var(--platinum);
+  color: var(--bg-main);
+  box-shadow: 0 8px 20px rgba(232, 235, 239, 0.12);
+}
+.btn-primary:hover {
+  background-color: var(--gold);
+  color: var(--bg-main);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(201, 163, 94, 0.3);
+}
+.btn-secondary {
+  background: none;
+  border: 2px solid var(--gold);
+  color: var(--platinum);
+  box-shadow: 0 4px 10px rgba(201, 163, 94, 0.18);
+}
+.btn-secondary:hover {
+  background-color: var(--gold);
+  color: var(--bg-main);
+  transform: translateY(-1px);
+}
+.btn-tool { min-width: 220px; }
 
-    <!-- Features -->
-    <section class="features" id="features">
-      <div class="container">
-        <h2 class="section-heading">Strategic advantage</h2>
-        <p class="section-subheading">Renarx delivers quantifiable financial control across three pillars of contract optimization.</p>
-        <div class="features-grid">
-          <article class="feature-card"><h3>Predictive pricing governance</h3><p>Anticipate vendor price hikes 6–12 months out.</p></article>
-          <article class="feature-card"><h3>License utilization audits</h3><p>Automate discovery of dormant licenses.</p></article>
-          <article class="feature-card"><h3>Contract value extraction</h3><p>Unify fragmented contracts to consolidate buying power.</p></article>
-        </div>
-      </div>
-    <section class="ai-tool" id="dashboard">
-  <div class="container">
-    <h2 class="section-heading">Dashboard Preview</h2>
-    <p class="section-subheading">A unified view of your SaaS contracts, renewals, and risks.</p>
-    <div class="tool-box-grid">
-      <div class="tool-box">
-        <h3>Renewal Calendar</h3>
-        <p>       Upcoming contract renewals with 6–12 month look‑ahead.</p>
-      </div>
-      <div class="tool-box">
-        <h3>Vendor Risk Cards</h3>
-        <p>Risk scores and uplift predictions for each vendor.</p>
-      </div>
-      <div class="tool-box">
-        <h3>License Utilization</h3>
-        <p>Active vs dormant seats, rightsizing opportunities.</p>
-      </div>
-      <div class="tool-box">
-        <h3>Alerts Panel</h3>
-        <p>Notifications for renewals, price hikes, and under‑use.</p>
-      </div>
-    </div>
+/* Assistant section */
+.assistant-section { padding: 50px 0; border-top: 1px solid var(--border); }
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--platinum);
+  margin: 0 0 8px;
+  text-align: center;
+}
+.section-subheading {
+  color: var(--silver);
+  font-size: 1.05rem;
+  max-width: 820px;
+  margin: 0 auto 0;
+  text-align: center;
+}
+.assistant-grid { display: grid; grid-template-columns: 360px 1fr; gap: 24px; align-items: start; }
 
-</section>
+/* Risk card + donut */
+.risk-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.risk-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.risk-title { font-weight: 700; color: var(--platinum); }
+.risk-tag { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
+.donut-wrap { display: flex; align-items: center; justify-content: center; padding: 6px 0; }
+.donut { width: 120px; height: 120px; }
+.donut-bg { fill: none; stroke: #222327; stroke-width: 12; }
+.donut-arc { fill: none; stroke: var(--gold); stroke-width: 12; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 60px 60px; }
+.donut-text { fill: var(--platinum); font-size: 18px; text-anchor: middle; dominant-baseline: middle; }
+.risk-caption { color: var(--muted); font-size: 0.95rem; margin: 8px 0 0; }
 
-    <!-- Toolkit (Negotiation insight mid-page) -->
-    <section class="ai-tool" id="toolkit">
-      <div class="container">
-        <h2 class="section-heading">Executive AI toolkit</h2>
-        <p class="section-subheading">Generate negotiation insights with concise, board‑ready outputs.</p>
+/* Assistant card */
+.assistant-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.input-label { color: var(--platinum); font-weight: 600; margin-bottom: 6px; display: block; }
+.input-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--platinum);
+  font-size: 1rem;
+}
+.input-textarea:focus { outline: none; border-color: var(--gold); }
+.tool-actions { display: flex; gap: 10px; justify-content: flex-start; margin-top: 10px; }
+.tool-output {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  color: var(--silver);
+  min-height: 90px;
+  white-space: pre-wrap;
+  font-size: 0.98rem;
+}
 
-        <div class="tool-box-grid">
-          <div class="tool-box">
-            <h3>Negotiation Insight Generator</h3>
-            <div class="input-group">
-              <label class="input-label" for="vendorInput">Vendor / Contract Details</label>
-              <textarea id="vendorInput" class="input-textarea" placeholder="Vendor, contract value, renewal date, unused licenses, key risks…" required></textarea>
-            </div>
-            <div class="tool-actions">
-              <button id="generateInsightBtn" class="btn btn-primary btn-tool">Generate strategic insight</button>
-            </div>
-            <div id="insightOutput" class="tool-output">Provide details to receive a concise negotiation strategy.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* Features */
+.features { padding: 50px 0; }
+.features-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+.feature-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--platinum);
+  margin: 0 0 8px;
+}
+.feature-card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
 
-    <!-- ROI (bottom) -->
-    <section class="ai-tool" id="roi">
-      <div class="container">
-        <h2 class="section-heading">ROI Statement Generator</h2>
-        <p class="section-subheading">Confirm projected savings and produce an executive‑ready statement for leadership.</p>
+/* Toolkit */
+.ai-tool { padding: 50px 0; border-top: 1px solid var(--border); }
+.tool-box-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 18px; }
+.tool-box { background: var(--card-bg); padding: 18px; border-radius: 12px; border: 1px solid var(--border); }
+.tool-box h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin: 0 0 12px;
+  text-align: center;
+}
+.input-group { display: flex; flex-direction: column; gap: 12px; }
+.input-field { display: grid; gap: 6px; }
+.input-field-control {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--platinum);
+  font-size: 1rem;
+}
+.input-field-control:focus { outline: none; border-color: var(--gold); }
 
-        <div class="tool-box">
-          <div class="input-group">
-            <div class="input-field">
-              <label class="input-label" for="annualSpend">Annual SaaS spend ($)</label>
-              <input type="number" id="annualSpend" class="input-field-control" value="500000" min="100000" required />
-            </div>
-            <div class="input-field">
-              <label class="input-label" for="savingsPercent">Estimated annual savings (%)</label>
-              <input type="number" id="savingsPercent" class="input-field-control" value="15" min="1" max="100" required />
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button id="generateRoiBtn" class="btn btn-primary btn-tool">Generate ROI statement</button>
-          </div>
-          <div id="roiOutput" class="tool-output">Enter figures and generate your board‑ready statement.</div>
-        </div>
-      </div>
-    </section>
+/* ROI bottom */
+#roi .tool-box { max-width: 720px; margin: 0 auto; }
 
-<section class="ai-tool" id="trajectory">
-  <div class="container">
-    <h2 class="section-heading">The Renarx Trajectory</h2>
-    <p class="section-subheading">Future capabilities on our roadmap for continuous innovation.</p>
-    <div class="tool-box-grid">
-      <div class="tool-box">
-        <h3>Q2 2026</h3>
-        <p><strong>Automated Clause Comparison</strong><br>
-        AI-driven comparison of contract clauses against industry benchmarks to flag predatory terms and standardize legal risk.</p>
-      </div>
-      <div class="tool-box">
-        <h3>Q3 2026</h3>
-        <p><strong>Cross-Functional Collaboration Portal</strong><br>
-        A dedicated workspace for Finance, Legal, and IT teams to jointly review data and approve strategic contract actions.</p>
-      </div>
-      <div class="tool-box">
-        <h3>Q4 2026</h3>
-        <p><strong>Benchmarking Ecosystem Integration</strong><br>
-        Live integration with anonymized peer data to benchmark your pricing against similar enterprise transactions.</p>
-    </div>
-  </div>
-</section>
+/* Join */
+.join { padding: 50px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.join-inner {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  max-width: 900px; margin: 0 auto;
+}
+.join-copy h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--platinum); margin: 0; }
+.join-copy p { color: var(--silver); margin: 8px 0 0; }
+.waitlist-form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.waitlist-form input {
+  padding: 12px 14px; border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-main);
+  color: var(--platinum);
+  min-width: 220px;
+}
+.waitlist-form input:focus { outline: none; border-color: var(--gold); }
+.privacy { color: var(--muted); font-size: 0.9rem; margin-top: 14px; text-align: right; }
 
-    <!-- Join -->
-    <section class="join" id="join">
-      <div class="container">
-        <div class="join-inner">
-          <div class="join-copy">
-            <h3>Ready for quantifiable control?</h3>
-            <p>Schedule a 15‑minute consultation to see how Renarx can secure 8–15% of your annual SaaS spend.</p>
-          </div>
-          <form class="waitlist-form" id="waitlistForm">
-            <input type="email" id="email" placeholder="Work email" required />
-            <input type="text" id="company" placeholder="Company name" required />
-            <button type="submit" class="btn btn-primary btn-tool">Request demo</button>
-          </form>
-        </div>
-        <p class="privacy">You will be contacted by a Renarx sales representative. Your data is secure.</p>
-      </div>
-    </section>
-  </main>
+/* Footer */
+.site-footer { padding: 26px 0; border-top: 1px solid var(--border); background-color: var(--bg-main); }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.9rem; }
+.footer-links a { color: var(--muted); margin-left: 22px; text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--gold); }
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; 2025 Renarx. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="mailto:support@renarx.com">Support</a>
-        <a href="#">Security statement</a>
-      </div>
-    </div>
-  </footer>
+/* Modal */
+.modal {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background-color: rgba(0,0,0,0.85);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 440px; width: 90%;
+  text-align: center; border: 2px solid var(--gold);
+  position: relative;
+}
+.modal-content h4 { color: var(--gold); font-family: var(--font-heading); font-size: 1.5rem; margin: 0 0 8px; }
+.modal-content p { color: var(--silver); margin: 0; }
+.close-btn { color: var(--muted); position: absolute; top: 12px; right: 18px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close-btn:hover { color: var(--platinum); }
 
-  <!-- Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close-btn" id="modalClose" aria-label="Close modal">×</button>
-      <h4>Consultation requested</h4>
-      <p>Thank you. A Renarx representative will reach out within one business day.</p>
-    </div>
-  </div>
+/* Responsive */
+@media (max-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .tool-box-grid { grid-template-columns: 1fr; }
+  .assistant-grid { grid-template-columns: 1fr; }
+  .join-inner { flex-direction: column; text-align: center; }
+  .waitlist-form { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .title { font-size: 2.6rem; }
+  .tagline { font-size: 1.05rem; }
+  .header-inner { flex-direction: column; gap: 12px; }
+  .nav { gap: 18px; }
+  .cta-group { flex-direction: column; gap: 12px; }
+  .btn { width: 100%; max-width: 340px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 12px; }
+  .logo { width: 24px; height: 24px; }
+  .brand-name { font-size: 1.5rem; }
+}
+/* Framer-style hover depth */
+.tool-box {
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1),
+              box-shadow 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.tool-box:hover {
+  transform: translateY(-12px) scale(1.04) rotate3d(1,1,0,2deg);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+}
 
-  <!-- Script at end of body -->
-  <script src="app.js"></script>
+/* Hero parallax background */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: url('assets/hero-bg.jpg') center/cover no-repeat fixed;
+  transform: scale(1.1);
+  z-index: -1;
+}
 
-  <!-- Animation libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+/* Trajectory timeline line */
+#trajectory .tool-box-grid {
+  position: relative;
+}
+#trajectory .tool-box-grid::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 0;
+}
+#trajectory .tool-box {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
 
-  <!-- Your app logic -->
-  <script src="app.js"></script>
+@media(max-width:1024px)
 
 .hero::before {
   content: "";
-  position: absolute;
+  position:absolute;
   inset: 0;
   background: url('assetshero-bg-platinum2.png') center/cover no-repeat fixed;
   z-index: -1;
   transform: scale(1.1);
 }
-
