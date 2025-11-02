@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Demo | Renarx</title>
+
+  <!-- Meta -->
+  <meta name="description" content="Request a demo of Renarx — the AI-driven SaaS optimization platform for finance teams." />
+  <meta property="og:title" content="Request a Demo | Renarx" />
+  <meta property="og:description" content="Discover how Renarx helps finance leaders predict vendor uplifts, prevent waste, and secure 8–15% annual SaaS savings." />
+  <meta property="og:image" content="/assets/og-demo-banner.png" />
+  <meta property="og:url" content="https://renarx.com/demo-request" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicons (add later) -->
+  <!--
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg-main: #0C0C0D;
+      --bg-gradient: linear-gradient(180deg, #18181A, #0C0C0D);
+      --platinum: #E8EBEF;
+      --silver: #BFC2C7;
+      --gold: #C9A35E;
+      --border: #2F2F32;
+      --card-bg: #1A1A1C;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-wordmark: 'Playfair Display', serif;
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--platinum);
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
+
+    p.intro {
+      font-size: 1.1rem;
+      color: var(--silver);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    form {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--silver);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #111;
+      color: var(--platinum);
+      font-family: var(--font-body);
+    }
+
+    button {
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #b58e4f;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      max-width: 180px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo placeholder -->
+    <div class="logo">
+      <!-- Add your logo later -->
+      <!-- <img src="/assets/logo.png" alt="Renarx Logo"> -->
+    </div>
+
+    <h1>Request a Demo</h1>
+    <p class="intro">
+      Discover how Renarx helps finance leaders predict vendor uplifts, prevent waste, 
+      and secure 8–15% annual SaaS savings. Complete the form below to book your consultation.
+    </p>
+
+    <!-- Formspree Form -->
+    <form id="demoForm" action="https://formspree.io/f/xjkplykg" method="POST">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Work Email *</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company">
+
+      <label for="spend">Annual SaaS Spend</label>
+      <select id="spend" name="spend">
+        <option value="<25k">< $25K</option>
+        <option value="25-50k">$25K – $50K</option>
+        <option value="50-100k">$50K – $100K</option>
+        <option value="100k+">> $100K</option>
+      </select>
+
+      <label for="concern">Vendor Concern (Optional)</label>
+      <textarea id="concern" name="concern"></textarea>
+
+      <label for="date">Preferred Date *</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time *</label>
+      <input type="time" id="time" name="time" required>
+
+      <!-- Hidden fields for auto-reply -->
+      <input type="hidden" name="_subject" value="New Demo Request from Renarx" />
+      <input type="hidden" name="_autoresponse" value="Thank you for requesting a demo with Renarx.
+
+We’ve received your request and our team will be in touch shortly to confirm your consultation. 
+During your session, you’ll see how Renarx helps finance leaders:
+
+• Predict vendor uplifts before they happen
+• Prevent waste across your SaaS portfolio
+• Secure 8–15% annual savings with confidence
+
+We’re excited to show you how Renarx delivers clarity, control, and measurable impact for finance teams.
+
+— The Renarx Team" />
+      <input type="hidden" name="_template" value="table" />
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</body>
+</html>
