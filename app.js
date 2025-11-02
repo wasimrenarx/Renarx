@@ -172,3 +172,5 @@ gsap.utils.toArray('#trajectory .tool-box').forEach((card, i) => {
     duration: 1
   });
 });
+<button onclick="window.location.href='/demo-request.html'">Request a Demo</button>
+});
