@@ -243,24 +243,8 @@ body {
 /* ROI bottom */
 #roi .tool-box { max-width: 720px; margin: 0 auto; }
 
-/* Join */
-.join { padding: 50px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.join-inner {
-  display: flex; justify-content: space-between; align-items: center; gap: 20px;
-  max-width: 900px; margin: 0 auto;
+
 }
-.join-copy h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--platinum); margin: 0; }
-.join-copy p { color: var(--silver); margin: 8px 0 0; }
-.waitlist-form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.waitlist-form input {
-  padding: 12px 14px; border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-main);
-  color: var(--platinum);
-  min-width: 220px;
-}
-.waitlist-form input:focus { outline: none; border-color: var(--gold); }
-.privacy { color: var(--muted); font-size: 0.9rem; margin-top: 14px; text-align: right; }
 
 /* Footer */
 .site-footer { padding: 26px 0; border-top: 1px solid var(--border); background-color: var(--bg-main); }
