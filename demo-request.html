@@ -189,7 +189,7 @@ We’re excited to show you how Renarx delivers clarity, control, and measurable
 
 <script>
 document.getElementById("demoForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+  e.preventDefault(); // stops the browser from redirecting
   const form = e.target;
   const data = new FormData(form);
   const response = await fetch(form.action, {
@@ -201,7 +201,7 @@ document.getElementById("demoForm").addEventListener("submit", async function(e)
     form.style.display = "none";
     document.getElementById("successMessage").style.display = "block";
   } else {
-    alert("Oops! Something went wrong.");
+    alert("Oops! Something went wrong. Please try again.");
   }
 });
 </script>
@@ -209,4 +209,5 @@ document.getElementById("demoForm").addEventListener("submit", async function(e)
   </div>
 </body>
 </html>
+
 
