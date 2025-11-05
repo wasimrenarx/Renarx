@@ -12,7 +12,7 @@
   --font-body: 'Inter', sans-serif;
   --font-wordmark: 'Playfair Display', serif;
 }
-
+ 
 /* Base */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
