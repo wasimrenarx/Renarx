@@ -52,6 +52,26 @@ body {
   letter-spacing: 0.01em;
   line-height: 1;
 }
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--platinum);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav { 
+    display: none; 
+    flex-direction: column;
+    gap: 12px;
+    background: var(--bg-main);
+    padding: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .nav.show { display: flex; }
+  .nav-toggle { display: block; }
 
 .nav { display: flex; gap: 24px; align-items: center; }
 .nav-link {
@@ -243,14 +263,40 @@ body {
 /* ROI bottom */
 #roi .tool-box { max-width: 720px; margin: 0 auto; }
 
-
-}
-
 /* Footer */
 .site-footer { padding: 26px 0; border-top: 1px solid var(--border); background-color: var(--bg-main); }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.9rem; }
 .footer-links a { color: var(--muted); margin-left: 22px; text-decoration: none; transition: color 0.2s ease; }
 .footer-links a:hover { color: var(--gold); }
+  /* Social icons (solid, crisp, responsive) */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px; height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: #111;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .social-icons a:hover {
+      transform: translateY(-1px);
+      border-color: var(--gold);
+      background: #151515;
+    }
+    .social-icons a svg {
+      width: 18px; height: 18px;
+      fill: var(--gold);
+      transition: fill 0.25s ease;
+    }
+    .social-icons a:hover svg { fill: var(--platinum); }
 
 /* Modal */
 .modal {
@@ -304,8 +350,10 @@ body {
 /* Hero parallax background */
 .hero {
   position: relative;
-  height: min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; /* corrected */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 .hero::before {
@@ -376,11 +424,8 @@ background: url('assets/hero-bg-platinum2.png') center/cover no-repeat fixed;
 .logo-facet-left { fill: var(--platinum); filter: drop-shadow(0 0 4px rgba(232,235,239,0.6)); }
 .logo-facet-right { fill: var(--gold); filter: drop-shadow(0 0 6px rgba(201,163,94,0.7)); }
 .logo-outline { stroke: var(--gold); stroke-width: 1.5; }
-
-}
 .logo:hover { transform: scale(1.1) rotate(3deg); transition: all 0.3s ease; }
 
-}
 @media (max-width: 600px) {
   .container {
     padding: 30px 15px;
