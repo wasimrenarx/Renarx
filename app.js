@@ -174,3 +174,24 @@ gsap.utils.toArray('#trajectory .tool-box').forEach((card, i) => {
 });
 <button onclick="window.location.href='/demo-request.html'">Request a Demo</button>
 });
+// AOS init
+AOS.init({
+  duration: 800,
+  once: true
+});
+
+// Example GSAP scroll animation
+gsap.from(".section-heading", {
+  scrollTrigger: ".section-heading",
+  y: 40,
+  opacity: 0,
+  duration: 1
+});
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+</script>
+
