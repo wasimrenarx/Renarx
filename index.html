@@ -91,7 +91,7 @@
     <!-- Features -->
     <section class="features" id="features">
       <div class="container">
-        <h2 class="section-heading">Strategic advantage</h2>
+       <h2 class="section-heading" data-aos="fade-up">Strategic advantage</h2>
         <p class="section-subheading">Renarx delivers quantifiable financial control across three pillars of contract optimization.</p>
         <div class="features-grid">
           <article class="feature-card"><h3>Predictive pricing governance</h3><p>Anticipate vendor price hikes 6–12 months out.</p></article>
@@ -257,3 +257,14 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
       </body>
      
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  gsap.from(".section-heading", {
+    scrollTrigger: ".section-heading",
+    y: 40,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2
+  });
+</script>
