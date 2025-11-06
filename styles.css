@@ -278,7 +278,7 @@ body {
     }
     .social-icons a {
       display: inline-flex;
-      align-items: left;
+      align-items: center;
       justify-content: center;
       width: 24px; height: 24px;
       border: 1px solid var(--border);
