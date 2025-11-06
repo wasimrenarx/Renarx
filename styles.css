@@ -268,6 +268,7 @@ body {
 .footer-inner { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.9rem; }
 .footer-links a { color: var(--muted); margin-left: 22px; text-decoration: none; transition: color 0.2s ease; }
 .footer-links a:hover { color: var(--gold); }
+
   /* Social icons (solid, crisp, responsive) */
     .social-icons {
       display: flex;
@@ -280,7 +281,7 @@ body {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 24px; height: 24px;
+      width: 32px; height: 32px;
       border: 1px solid var(--border);
       border-radius: 50%;
       background: #111;
@@ -292,11 +293,12 @@ body {
       background: #151515;
     }
     .social-icons a svg {
-      width: 14px; height: 14px;
+      width: 18px; height: 18px;
       fill: var(--gold);
       transition: fill 0.25s ease;
     }
     .social-icons a:hover svg { fill: var(--platinum); }
+
 
 /* Modal */
 .modal {
