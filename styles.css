@@ -61,7 +61,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) 
   .nav { 
     display: none; 
     flex-direction: column;
@@ -278,7 +278,7 @@ body {
     }
     .social-icons a {
       display: inline-flex;
-      align-items: center;
+      align-items: left;
       justify-content: center;
       width: 24px; height: 24px;
       border: 1px solid var(--border);
