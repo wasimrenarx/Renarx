@@ -194,4 +194,3 @@ gsap.from(".section-heading", {
     navMenu.classList.toggle("show");
   });
 </script>
-
